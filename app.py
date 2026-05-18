@@ -1470,7 +1470,7 @@ elif st.session_state.step == "analyse":
     def colour_overall(val):
         return f"background-color:{BG_MAP.get(val,'')};color:{FG_MAP.get(val,'')}"
 
-    styled_sum = summary_df.style.applymap(colour_overall, subset=["Overall risk"])
+    styled_sum = summary_df.style.map(colour_overall, subset=["Overall risk"])
     st.dataframe(styled_sum, use_container_width=True, hide_index=True)
 
     st.markdown("---")
